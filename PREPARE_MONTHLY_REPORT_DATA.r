@@ -14,7 +14,8 @@
 #MYDATADRIVE<-"C:\\Users\\Gough Conservation\\Documents\\Gough Birders\\Database"
 #MYREPORTDRIVE<-"C:\\Users\\Gough Conservation\\Documents\\Gough Birders\\2022-2023\\12.Monthly reports 2022-23"
 
-MYDATADRIVE<-"C:\\Users\\hanna\\OneDrive\\Documents\\Gough_RSPB\\training_databases"
+#MYDATADRIVE<-"C:\\Users\\hanna\\OneDrive\\Documents\\Gough_RSPB\\training_databases"
+MYDATADRIVE<-"C:\\Users\\hanna\\OneDrive\\Documents\\GitHub\\MonthlyReport"
 MYREPORTDRIVE<-"C:\\Users\\hanna\\OneDrive\\Documents\\GitHub\\MonthlyReport"
 
 #MYDATADRIVE<-"S:\\ConSci\\DptShare\\SteffenOppel\\RSPB\\UKOT\\Gough\\DATA"
