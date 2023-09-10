@@ -28,7 +28,7 @@ MYREPORTDRIVE<-"C:\\Users\\hanna\\OneDrive\\Documents\\GitHub\\MonthlyReport"
 ###  NEED TO SPECIFY THE YEAR AND MONTH FOR WHICH YOU WANT A SUMMARY ########
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~########
 ### the reported month is always the month previous to the script being run
-
+library(lubridate)
 today<-as.Date(Sys.time())
 day(today)<-1  ## we set it to the first day of the month so the report is from first to last day of previous month 
 startreportperiod<- today-months(1)
@@ -178,7 +178,7 @@ nestvisits<-nestvisits %>% filter(Date>=startreportperiod) %>% filter(Date<endre
 landbirdsurveys<-landbirdsurveys %>% filter(Date>=startreportperiod) %>% filter(Date<endreportperiod)
 landbirdcounts <- landbirdcounts %>% group_by(LandbirdSurveyID,Species) %>% summarise(N=sum(N_birds)) %>%
   spread(key=Species, value=N, fill=0)
-landbirdcounts <- landbirdsurveys %>% left_join(landbirdcounts, by="LandbirdSurveyID", fill=0) %>%
+landbirdcounts <- landbirdsurveys %>% left_join(landbirdcounts, by="LandbirdSurveyID") %>%
   mutate(GOBU=ifelse(is.na(GOBU),0,GOBU),GOMO=ifelse(is.na(GOMO),0,GOMO))
 
 seabirdcounts<-seabirdcounts %>% filter(Date>=startreportperiod) %>% filter(Date<=endreportperiod)
